@@ -19,16 +19,19 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', 'PagesController@contact');
 
-Route::get('/projects', 'ProjectsController@index');
+//resourcefull routing for the projects
+Route::resource('projects', 'ProjectsController');
 
-Route::post('/projects', 'ProjectsController@store');
+// Route::get('/projects', 'ProjectsController@index');
 
-Route::get('/projects/create', 'ProjectsController@create');
+// Route::post('/projects', 'ProjectsController@store');
 
-// Route::get('/about', function () {
-//     return view('about');
-// });
+// Route::get('/projects/create', 'ProjectsController@create');
 
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
+// Route::get('/projects/{project}', 'ProjectsController@show');
+
+// Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+
+// Route::patch('/projects/{project}', 'ProjectsController@update');
+
+// Route::delete('/projects/{project}', 'ProjectsController@destroy');
