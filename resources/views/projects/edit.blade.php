@@ -6,8 +6,8 @@
  <h1>Edit Project</h1>
 
  <form method="POST" action="/projects/{{ $project->id}}">
- 	{{method_field('PATCH')}}
-  	{{@csrf_field()}}
+ 	@method('PATCH')
+ 	@csrf
 
   Project Title:<br>
   <input type="text" name="title" placeholder="Project Title" value="{{$project->title}}"><br>
@@ -16,6 +16,13 @@
   <textarea name="description" >{{$project->description}}</textarea> <br><br>
 
   <input type="submit" value="Update Project">
+ </form>
+
+ <form method="POST" action="/projects/{{ $project->id}}">
+ 	@method('DELETE')
+ 	@csrf
+
+  <input type="submit" class="button is-link" value="Delete Project">
  </form>
 
 @endsection
