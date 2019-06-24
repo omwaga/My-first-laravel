@@ -22,5 +22,10 @@ Route::get('/contact', 'PagesController@contact');
 //resourcefull routing for the projects
 Route::resource('projects', 'ProjectsController');
 
+Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
