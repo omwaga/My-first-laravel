@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
   <h1 class="title">{{$project->title}}</h1>
@@ -43,6 +43,7 @@
    <div class="field">
      <div class="control">
        <button type="submit" class="button is-link">Add Task</button>
+       <a href="/projects">Go Back</a>
      </div>
    </div>
 
