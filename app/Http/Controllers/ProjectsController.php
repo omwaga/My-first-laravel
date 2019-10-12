@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use App\Mail\ProjectCreated;
 
 
 class ProjectsController extends Controller
@@ -32,6 +33,10 @@ class ProjectsController extends Controller
       ]);
 
    	Project::create($attributes + ['owner_id' => auth()->id()]);
+
+      \Mail::to('collinsomwaga@gmail.com')->send(
+         new ProjectCreated($project)
+      );
 
    	return redirect('/projects');
    }

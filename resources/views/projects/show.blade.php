@@ -17,7 +17,7 @@
   <div class="box">
   	@foreach ($project->tasks as $task)
   	 <div>
-  	  <form method="POST" action="/tasks/ {{ $task->id}}">
+  	  <form method="POST" action="/tasks/{{ $task->id}}">
   	  	@method('PATCH')
   	  	@csrf
   	  	<label class="checkbox  {{ $task->completed ? 'is-complete' : ''}}" for="completed">
